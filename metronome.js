@@ -69,6 +69,12 @@ function togglePlay() {
 function updateBeatCounter() {
     const val = elements.noteType.value;
     elements.beatCounter.innerText = `${(settings.timesThrough % val) + 1}`;
+    if (elements.beatCounter.innerText == 1 && settings.playSound) {
+        document.getElementById("beat-counter").style.border = "2px solid #ff0000";
+    }
+    else {
+        document.getElementById("beat-counter").style.border = "2px solid #565656";
+    }
 }
 
 /**
